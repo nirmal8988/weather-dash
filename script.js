@@ -9,7 +9,23 @@ const weatherIcons = {
     Mist: "🌫️",
 };
 const aqiColors = ["#00E400", "#FFFF00", "#FF7E00", "#FF0000", "#8F3F97"];
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBTYa1k04tUbyXM2vDga9wWrE3Ube027ak",
+  authDomain: "weather-dash-50742.firebaseapp.com",
+  projectId: "weather-dash-50742",
+  storageBucket: "weather-dash-50742.firebasestorage.app",
+  messagingSenderId: "1063691826892",
+  appId: "1:1063691826892:web:53e2280ad0d8c1907b3469"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 async function fetchWeather(lat, lon) {
     try {
         const weatherResponse = await fetch(
